@@ -1,6 +1,7 @@
-# PERSONNEL MANAGEMENT APP 2
-C++ Qt-application for managing personnel and their salaries. 
+# SUMMARY
+C++ Qt-application for managing personnel and their salaries based on SQLITE database.
 
+# PERSONNEL MANAGEMENT APP
 
  Your task is to design and implement a company personnel management
  application. Design your application so that the UI part can be replaced easily. You
@@ -49,6 +50,6 @@ Aapo Keskimolo      aapokesk@gmail.com
 - CMake 3.6.1
 
 # BUILD INSTRUCTIONS
-1. git clone https://github.com/akeskimo/PersonnelManagementApp2.git
+1. git clone https://github.com/akeskimo/PersonnelManagementApp.git
 2. Install Qt 5.6+
 3. Build & Run project
