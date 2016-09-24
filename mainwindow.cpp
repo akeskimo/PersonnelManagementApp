@@ -12,13 +12,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     // set main window settings
-    this->setWindowTitle("QtPersonnelManagementApp");
-    this->move(mapFromGlobal(QPoint(300,300)));
+    QApplication::setApplicationName("PersonnelManagementApp");
+    this->setWindowTitle(QApplication::applicationName());
 
     // load app settings
     m_settings = new QSettings(QSettings::IniFormat, QSettings::UserScope,
                 "QtDevelopment", QApplication::applicationName());
     loadSettings();
+
+    if(m_settings->value("MainWindow/pos") == QVariant() ) {
+        qDebug("Initial setup detected!");
+        this->move(mapFromGlobal(QPoint(300,300)));
+        this->resize(1100,350);
+        qDebug("Moved window to initial setup position");
+    }
 
     // initialize widgets and model
     initWidgets();

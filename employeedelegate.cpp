@@ -32,8 +32,6 @@ QWidget* EmployeeDelegate::createEditor(QWidget *parent,
     if (editor) {
         editor->setHeader("Edit Employee");
         connect(editor, SIGNAL(editingAccepted()), this, SLOT(handleCommitAndCloseEditor()));
-//        connect(editor, &EmployeeEditor::editingAccepted,
-//                this, &EmployeeDelegate::handleCommitAndCloseEditor);
         return editor;
     } else {
         return QStyledItemDelegate::createEditor(parent, option, index);
