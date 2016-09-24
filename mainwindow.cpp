@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if(m_settings->value("MainWindow/pos") == QVariant() ) {
         qDebug("Initial setup detected!");
         this->move(mapFromGlobal(QPoint(300,300)));
-        this->resize(1100,350);
+        this->resize(1200,350);
         qDebug("Moved window to initial setup position");
     }
 
@@ -190,22 +190,21 @@ QSqlError MainWindow::loadDatabase(QString dbname)
 
     // check whether employee table already exist in database
     if (db.tables().contains("employees", Qt::CaseInsensitive)) {
-//        QMessageBox::information(this, "Database restored",
-//                                 "Restored database: " + db.databaseName());
         return QSqlError();
     } else {
-        qInfo("Creating dummy database...");
+        QMessageBox::information(this, "Database " + db.databaseName(),
+                                 "No previous database found. Initialized new database with example employees.");
         // create employee table
         if (result)
             result = Database::createEmployeeTable(q);
 
         // add employees
         if(result)
-            result = Database::addMonthlyEmployee(q, QString("Teemu kulervo"), QString("120384-123A"),3350.99);
+            result = Database::addMonthlyEmployee(q, QString("Teemu kulervo"), QString("120384-1233"),3350.99);
         if(result)
-            result = Database::addHourlyEmployee(q, QString("Jaana Sannila"), QString("139394-3333"), 21.50, 179.60);
+            result = Database::addHourlyEmployee(q, QString("Jaana Sannila"), QString("130394-837X"), 21.50, 179.60);
         if(result)
-            result = Database::addSalesmanEmployee(q, QString("Juppi Jarvinen"), QString("332332-123A"), 1500.0, 300.0, 35, true);
+            result = Database::addSalesmanEmployee(q, QString("Juppi Jarvinen"), QString("301278-123A"), 1500.0, 300.0, 35, true);
         if (result)
             qInfo("Tables created successfully");
         else
