@@ -185,7 +185,7 @@ void EmployeeEditor::setEditorWidgetVisibility(bool mSal, bool hDone, bool hSal,
 
 void EmployeeEditor::updateModelWithEditorData(QSqlRelationalTableModel *model, const QModelIndex &index)
 {
-    if (!checkData()) {
+    if (!checkData(false)) {
         qCritical("Unexpected call: Trying to update model with invalid data -> returning");
         return;
     }
@@ -450,7 +450,7 @@ void EmployeeEditor::accept()
         }
         QDialog::accept();
     } else {
-        qWarning() << "Accept blocked! checkData(true) = " << checkData(true);
+        qWarning() << "Accept blocked! checkData(true) = " << checkData(false);
     }
 }
 
