@@ -7,9 +7,14 @@
 #include "globals.h"
 
 class Database{
+
+private:
+
+    Database(){} // make class abstract
+
 public:
 
-    static QSqlError openDatabase(QString dbname, QSqlDatabase &db, QSqlQuery &q)
+    static const QSqlError openDatabase(QString dbname, QSqlDatabase &db, QSqlQuery &q)
     {
         db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName(dbname);

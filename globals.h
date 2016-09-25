@@ -5,7 +5,7 @@
 #define MAX_EMPLOYEE_NAME_LEN 30
 #define MAX_EMPLOYEE_SSN_LEN 11
 #define EMPLOYEE_SSN_REGEXP "^([1-2][0-9]|0[1-9]|3[01])(0[1-9]|1[012])[0-9]{2}-[0-9]{3}[a-z,A-Z,0-9]{1}$" // DDMMYY-123X
-#define EMPLOYEE_NAME_REGEXP "^[^0-9~,.|/\\<>!\"#¤%&{}():;=?+@$^*_]{30}" // no numerals or symbols
+#define EMPLOYEE_NAME_REGEXP "^[^0-9~,.|\/\\<>!\"#¤%&{}():;=?+@$^*_]{30}" // no numerals or symbols
 
 // structures
 enum employeeTypes { None, Monthly, Hourly, Salesman };

@@ -200,11 +200,15 @@ QSqlError MainWindow::loadDatabase(QString dbname)
 
         // add employees
         if(result)
-            result = Database::addMonthlyEmployee(q, QString("Teemu kulervo"), QString("120384-1233"),3350.99);
+            result = Database::addMonthlyEmployee(q, QString("Teemu Samuli Kullervo"), QString("120384-1233"),3350.99);
         if(result)
-            result = Database::addHourlyEmployee(q, QString("Jaana Sannila"), QString("130394-837X"), 21.50, 179.60);
+            result = Database::addHourlyEmployee(q, QString("Jaana Janita Sannila"), QString("130394-837X"), 21.50, 179.60);
         if(result)
-            result = Database::addSalesmanEmployee(q, QString("Juppi Jarvinen"), QString("301278-123A"), 1500.0, 300.0, 35, true);
+            result = Database::addSalesmanEmployee(q, QString("Juppi Eemeli Järvinen"), QString("301278-123A"), 1500.0, 300.0, 35, true);
+        if(result)
+            result = Database::addMonthlyEmployee(q, QString("Tiril Sjåstad Christiansen"), QString("010172-671Y"), 5965);
+        if(result)
+            result = Database::addSalesmanEmployee(q, QString("李小龍 The Little Phoenix"), QString("271140-1337"), 5510.95, 0.0, 100, false);
         if (result)
             qInfo("Tables created successfully");
         else
