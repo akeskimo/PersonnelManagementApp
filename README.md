@@ -40,16 +40,16 @@ C++ Qt-application for managing personnel and their salaries based on SQLITE dat
 # Authors
 Aapo Keskimolo      aapokesk@gmail.com
 
-# PLATFORM SUPPORT
-- Linux 64bit Debian/Ubuntu
-- Windows XP/7/10 32bit/64bit
-
-# TOOLS USER FOR DEVELOPMENT
-- QT Creator 5.6.1 Desktop (MSVC2013-64bit)
+# TOOLS USED FOR THE DEVELOPMENT
+- QT Creator 5.6.1 Desktop (Windows 7 MSVC2013-64bit)
 - MINGW GCC version 4.9.3 
 - CMake 3.6.1
 
+# TESTED PLATFORMS
+- Linux Debian/Ubuntu (64bit)
+- Windows XP/7/10 (32bit/64bit)
+
 # BUILD INSTRUCTIONS
-1. git clone https://github.com/akeskimo/PersonnelManagementApp.git
+1. Clone repository
 2. Install Qt 5.6+
 3. Build & Run project
